@@ -27,7 +27,7 @@ jobs:
       with:
         context: ./apps/nginx
         push: true
-        tags: ghcr.io/andrewmiron/load-balancer:latest
+        tags: andrewmiron/load-balancer:latest
         
 #     - name: Build Nginx Docker Image
 #       run: |
