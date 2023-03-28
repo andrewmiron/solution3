@@ -28,16 +28,23 @@ jobs:
         
     - name: Extract metadata (tags, labels) for Docker
       id: meta
-      uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+      uses: docker/metadata-action@v4
       with:
         images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
         
-    - name: Build and push
+    - name: Build and push nginx
       uses: docker/build-push-action@v4
       with:
         context: ./apps/nginx
         push: true
-        tags: ${{ steps.meta.outputs.tags }}
+        tags: ghcr.io/andrewmiron/solution3:nginx
+        
+    - name: Build and push wordpress
+      uses: docker/build-push-action@v4
+      with:
+        context: ./apps/wordpress
+        push: true
+        tags: ghcr.io/andrewmiron/solution3:wordpress
         
 #     - name: Build Nginx Docker Image
 #       run: |
