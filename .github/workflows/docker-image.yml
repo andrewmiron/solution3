@@ -24,8 +24,8 @@ jobs:
         
     - name: Build Nginx Docker Image
       run: |
-        docker buildx build --platform linux/amd64 -t ghcr.io/andrewmiron/load--balancer:latest -f apps/nginx/Dockerfile .
+        docker buildx build --platform linux/amd64 -t ghcr.io/andrewmiron/load-balancer:latest -f apps/nginx/Dockerfile .
         
     - name: Push Docker Image to Github Container Registry
       run: |
-        docker buildx build --platform linux/amd64 --push ghcr.io/andrewmiron/load--balancer:latest
+        docker buildx build --platform linux/amd64 --push ghcr.io/andrewmiron/load-balancer:latest
