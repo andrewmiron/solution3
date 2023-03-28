@@ -24,7 +24,7 @@ jobs:
       with:
         registry: ${{ env.REGISTRY }}
         username: ${{ github.actor }}
-        password: ${{ secrets.TOKEN_V2 }}
+        password: ${{ secrets.TOKEN }}
         
     - name: Extract metadata (tags, labels) for Docker
       id: meta
@@ -39,12 +39,12 @@ jobs:
         push: true
         tags: ghcr.io/andrewmiron/solution3:nginx
         
-    - name: Build and push wordpress
-      uses: docker/build-push-action@v4
-      with:
-        context: ./apps/wordpress
-        push: true
-        tags: ghcr.io/andrewmiron/solution3:wordpress
+#    - name: Build and push wordpress
+#      uses: docker/build-push-action@v4
+#      with:
+#        context: ./apps/wordpress
+#        push: true
+#        tags: ghcr.io/andrewmiron/solution3:wordpress
         
 #     - name: Build Nginx Docker Image
 #       run: |
