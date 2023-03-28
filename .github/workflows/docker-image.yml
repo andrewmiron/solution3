@@ -26,7 +26,7 @@ jobs:
       uses: docker/build-push-action@v4
       with:
         context: ./apps/nginx
-        push: true
+        push: false
         tags: andrewmiron/load-balancer:latest
         
 #     - name: Build Nginx Docker Image
