@@ -20,13 +20,13 @@ jobs:
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
-        password: ${{ secrets.TOKEN }}
+        password: ${{ secrets.TOKEN_V1 }}
         
     - name: Build and push
       uses: docker/build-push-action@v4
       with:
         context: ./apps/nginx
-        push: false
+        push: true
         tags: andrewmiron/load-balancer:latest
         
 #     - name: Build Nginx Docker Image
